@@ -1,5 +1,5 @@
 <template>
-  <router-link class="item" v-bind:to="{ name: 'pokemon-edit', params: { pokemonId: pokemon.id }}">
+  <router-link class="root" v-bind:to="{ name: 'pokemon-edit', params: { pokemonId: pokemon.id }}">
     <img class="image" v-bind:src="pokemon.url" />
     <div class="label">{{pokemon.name}}</div>
   </router-link>
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style scoped>
-.item {
+.root {
   display: inline-block;
   padding: 15px;
   margin: 10px;

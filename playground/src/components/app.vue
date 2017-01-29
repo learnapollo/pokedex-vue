@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="w-100 bg-light-gray min-vh-100">
+  <div id="app">
     <router-view></router-view>
   </div>
 </template>
@@ -17,9 +17,14 @@ a,
 button {
   cursor: pointer;
   text-decoration: none;
+  transition: ease-out 0.3s;
 }
 a:hover,
 button:hover {
-  opacity: 0.8;
+  opacity: 0.7;
+}
+a:disabled,
+button:disabled {
+  opacity: 0.3;
 }
 </style>

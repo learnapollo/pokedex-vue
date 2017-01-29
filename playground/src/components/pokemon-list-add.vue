@@ -1,11 +1,11 @@
 <template>
-  <router-link class="item" v-bind:to="{ name: 'pokemon-new' }">
+  <router-link class="root" v-bind:to="{ name: 'pokemon-new' }">
     +
   </router-link>
 </template>
 
 <style scoped>
-.item {
+.root {
   display: inline-block;
   padding: 10px;
   margin: 10px 5px 10px 10px;

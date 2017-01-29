@@ -1,5 +1,5 @@
 <template>
-  <div class="list">
+  <div class="root">
     <template v-if="loading > 0">
       Loading ...
     </template>
@@ -65,11 +65,10 @@ export default {
 </script>
 
 <style scoped>
-.list {
+.root {
   text-align: center;
   padding: 20px;
 }
-
 .title {
   padding: 40px;
   display: block;
