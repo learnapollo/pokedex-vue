@@ -1,24 +1,23 @@
 <template>
-  <div>
+  <div class="list">
     <template v-if="loading > 0">
       Loading ...
     </template>
     <template v-else>
-      <div>
+      <div class="title">
         Hey {{ trainer.name }}, you have {{ trainer.ownedPokemons.length }} pokemons in your pokedex
       </div>
-      <ul>
-        <router-link v-bind:to="{ name: 'pokemon-new' }">New</router-link>
-        <li v-for="pokemon in pokemons" v-bind:key="pokemon.id">
-          <pokemon-list-item v-bind:pokemon="pokemon"></pokemon-list-item>
-        </li>
-      </ul>
+      <div class="items">
+        <pokemon-list-add></pokemon-list-add>
+        <pokemon-list-item v-for="pokemon in pokemons" v-bind:key="pokemon.id" v-bind:pokemon="pokemon"></pokemon-list-item>
+      </div>
     </template>
   </div>
 </template>
 
 <script>
 import gql from 'graphql-tag';
+import PokemonListAdd from './pokemon-list-add.vue';
 import PokemonListItem from './pokemon-list-item.vue';
 import {trainerName} from '../config';
 
@@ -38,6 +37,7 @@ const trainerQuery = gql`
 
 export default {
   components: {
+    'pokemon-list-add': PokemonListAdd,
     'pokemon-list-item': PokemonListItem
   },
   data: () => ({
@@ -63,3 +63,18 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.list {
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  padding: 40px;
+  display: block;
+  color: #7F7F7F;
+  font-size: 32px;
+  font-weight: 300;
+}
+</style>
