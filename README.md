@@ -13,7 +13,7 @@ If you haven't done it already, checkout the [hands-on Learn Apollo tutorial](ht
 ```sh
 cd playground
 yarn install
-yarn dev # open localhost:4000
+TRAINER_NAME='{your-name}' TRAINER_ID="{your-id}" yarn dev
 ```
 
 ## Workflow

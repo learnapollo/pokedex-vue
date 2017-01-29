@@ -1,2 +1,2 @@
-export const trainerName = 'Kristijan Sedlak';
-export const trainerId = 'ciyg03gv6kjp30164zo6u8jn2';
+export const trainerName = process.env.TRAINER_NAME;
+export const trainerId = process.env.TRAINER_ID;
