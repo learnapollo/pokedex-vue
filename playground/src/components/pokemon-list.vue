@@ -1,5 +1,5 @@
 <template>
-  <div class="pokedex">
+  <div>
     <template v-if="loading > 0">
       Loading
     </template>
@@ -9,7 +9,7 @@
       </div>
       <ul>
         <li v-for="pokemon in pokemons" :key="pokemon.id">
-          {{ pokemon.name }}
+          <pokemon-list-item :pokemon="pokemon"></pokemon-list-item>
         </li>
       </ul>
     </template>
@@ -18,8 +18,8 @@
 
 <script>
 import gql from 'graphql-tag';
+import PokemonListItem from './pokemon-list-item.vue';
 
-// GraphQL query
 const TrainerQuery = gql`
   query TrainerQuery($name: String!) {
     Trainer(name: $name) {
@@ -34,27 +34,26 @@ const TrainerQuery = gql`
   }
 `;
 
-// Component def
 export default {
-  // Local state
+  components: {
+    'pokemon-list-item': PokemonListItem
+  },
   data: () => ({
     Trainer: { ownedPokemons: [] },
     loading: 0,
   }),
-  // Apollo GraphQL
   apollo: {
     Trainer: {
       query: TrainerQuery,
       variables: {
-        name: '__NAME__',
+        name: 'Kristijan Sedlak',
       },
       loadingKey: 'loading',
     },
   },
-  // Computed properties
   computed: {
     pokemons() {
-      return this.Trainer.ownedPokemons.reverse()
+      return this.Trainer.ownedPokemons
     }
   },
 };

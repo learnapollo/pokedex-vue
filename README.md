@@ -13,7 +13,7 @@ If you haven't done it already, checkout the [hands-on Learn Apollo tutorial](ht
 ```sh
 cd playground
 yarn install
-yarn start # open localhost:3000
+yarn dev # open localhost:4000
 ```
 
 ## Workflow
