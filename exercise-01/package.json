@@ -1,0 +1,17 @@
+{
+  "name": "pokedex-vue",
+  "description": "A Pokedex App using and teaching Apollo and Vue.js",
+  "private": true,
+  "scripts": {
+    "dev": "vue build src/index.js --config ./vue.config.js"
+  },
+  "dependencies": {
+    "apollo-client": "^0.5.0",
+    "vue": "^2.1.10",
+    "vue-apollo": "^1.3.0",
+    "vue-router": "^2.2.0"
+  },
+  "devDependencies": {
+    "vue-cli": "^2.8.0"
+  }
+}
